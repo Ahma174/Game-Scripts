@@ -33,7 +33,6 @@ local Window = WindUI:CreateWindow({
     Resizable = true,
 })
 
--- Main tab
 local Main = Window:Tab({
     Title = "Main",
     Icon = "layers",
@@ -141,7 +140,7 @@ Pets:Input({
     Desc = "Enter A Number to Open The Crystal",
     Placeholder = "Type here...",
     Callback = function(value)
-       for i = 1, value do
+       for i = 1, tonumber(value) do
          ocr:InvokeServer("openCrystal", SelectedC)
        end
     end,
