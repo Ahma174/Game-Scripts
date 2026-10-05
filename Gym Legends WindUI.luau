@@ -71,9 +71,9 @@ Main:Toggle({
         if v1 then
          task.spawn(function()
           while v1 do
-           Event:FireServer("leftHand")
+           Event:FireServer("punch", "leftHand")
            task.wait(0.07)
-           Event:FireServer("rightHand")
+           Event:FireServer("punch", "rightHand")
            task.wait(0.07)
           end
          end)
