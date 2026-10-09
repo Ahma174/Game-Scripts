@@ -23,6 +23,19 @@ local autor = game:GetService("Players").LocalPlayer.autoRebirthEnabled
 local mon = game:GetService("Players").LocalPlayer.musicOn
 local tron = game:GetService("Players").LocalPlayer.tradingOn
 
+-- chests
+local lc = workspace.legendsChest.circleInner
+local gc = workspace.goldenChest.circleInner
+local gr = workspace.groupRewardsCircle.circleInner
+local ec = workspace.enchantedChest.circleInner
+local mc = workspace.magmaChest.circleInner
+local mc2 = workspace.mythicalChest.circleInner
+
+-- general
+local function hrp()
+  return game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+end
+
 local Window = WindUI:CreateWindow({
     Title = "Average Script Hub | ".. ms:GetProductInfo(game.PlaceId).Name,
     Author = "Made By Sjjsksjsnnnsns, Made With WindUI",
@@ -318,6 +331,83 @@ Misc:Input({
     Placeholder = "Type here...",
     Callback = function(value)
        sas:InvokeServer("changeSpeed", tonumber(value))
+    end,
+})
+
+local Chests = Window:Tab({
+    Title = "Chests",
+    Icon = "layers",
+})
+
+Chests:Button({
+    Title = "Open Legends Chest",
+    Desc = "Click The Button To Open The Legends Chest",
+    Icon = "mouse-pointer",
+    Callback = function()
+       local hrp = hrp()
+       firetouchinterest(lc, hrp, 0)
+       task.wait()
+       firetouchinterest(lc, hrp, 1)
+    end,
+})
+
+Chests:Button({
+    Title = "Open Golden Chest",
+    Desc = "Click The Button To Open The Golden Chest",
+    Icon = "mouse-pointer",
+    Callback = function()
+       local hrp = hrp()
+       firetouchinterest(gc, hrp, 0)
+       task.wait()
+       firetouchinterest(gc, hrp, 1)
+    end,
+})
+
+Chests:Button({
+    Title = "Open Group Chest",
+    Desc = "Click The Button To Open The Group Chest",
+    Icon = "mouse-pointer",
+    Callback = function()
+       local hrp = hrp()
+       firetouchinterest(gr, hrp, 0)
+       task.wait()
+       firetouchinterest(gr, hrp, 1)
+    end,
+})
+
+Chests:Button({
+    Title = "Open Enchanted Chest",
+    Desc = "Click The Button To Open The Enchanted Chest",
+    Icon = "mouse-pointer",
+    Callback = function()
+       local hrp = hrp()
+       firetouchinterest(ec, hrp, 0)
+       task.wait()
+       firetouchinterest(ec, hrp, 1)
+    end,
+})
+
+Chests:Button({
+    Title = "Open Magma Chest",
+    Desc = "Click The Button To Open The Magma Chest",
+    Icon = "mouse-pointer",
+    Callback = function()
+       local hrp = hrp()
+       firetouchinterest(mc, hrp, 0)
+       task.wait()
+       firetouchinterest(mc, hrp, 1)
+    end,
+})
+
+Chests:Button({
+    Title = "Open Mythical Chest",
+    Desc = "Click The Button To Open The Mythical Chest",
+    Icon = "mouse-pointer",
+    Callback = function()
+       local hrp = hrp()
+       firetouchinterest(mc2, hrp, 0)
+       task.wait()
+       firetouchinterest(mc2, hrp, 1)
     end,
 })
 end
